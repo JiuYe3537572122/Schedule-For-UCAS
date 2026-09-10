@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 11 及以下的自动备份规则：
+     flutter_secure_storage 的密文由 Android Keystore 密钥加密，卸载重装 / 换机后密钥不存在，
+     恢复回来的密文无法解密，因此把它的三个 SharedPreferences 文件排除出备份。课表数据库照常备份。 -->
+<full-backup-content>
+    <exclude domain="sharedpref" path="FlutterSecureStorage.xml"/>
+    <exclude domain="sharedpref" path="FlutterSecureKeyStorage.xml"/>
+    <exclude domain="sharedpref" path="FlutterSecureStorageConfiguration.xml"/>
+</full-backup-content>
